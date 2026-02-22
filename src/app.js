@@ -25,12 +25,53 @@ app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 app.use("/api/auth", authRoutes);
 app.use("/api/notes", noteRoutes);
 
-// Health check
+/**
+ * @openapi
+ * /:
+ *   get:
+ *     summary: API durum kontrolü ve bilgileri
+ *     description: API'nin çalışma durumunu, versiyon bilgisini ve geliştirici bilgilerini döndürür.
+ *     tags: [General]
+ *     responses:
+ *       200:
+ *         description: API başarıyla çalışıyor
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 message:
+ *                   type: string
+ *                   example: Notes API is running
+ *                 version:
+ *                   type: string
+ *                   example: "1.0.0"
+ *                 docs:
+ *                   type: string
+ *                   example: /api-docs
+ *                 createdBy:
+ *                   type: object
+ *                   properties:
+ *                     name:
+ *                       type: string
+ *                       example: Serkanby
+ *                     website:
+ *                       type: string
+ *                       example: https://serkanbayraktar.com/
+ *                     github:
+ *                       type: string
+ *                       example: https://github.com/Serkanbyx
+ */
 app.get("/", (_req, res) => {
   res.json({
     message: "Notes API is running",
-    docs: "/api-docs",
     version: "1.0.0",
+    docs: "/api-docs",
+    createdBy: {
+      name: "Serkanby",
+      website: "https://serkanbayraktar.com/",
+      github: "https://github.com/Serkanbyx",
+    },
   });
 });
 

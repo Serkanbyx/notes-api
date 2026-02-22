@@ -9,7 +9,8 @@ const options = {
       description:
         "A RESTful API for managing personal notes with JWT authentication, ownership control, search and tag filtering.",
       contact: {
-        name: "API Support",
+        name: "Serkanby",
+        url: "https://serkanbayraktar.com/",
       },
     },
     servers: [
@@ -24,11 +25,12 @@ const options = {
       },
     ],
     tags: [
+      { name: "General", description: "General API endpoints" },
       { name: "Auth", description: "Authentication endpoints" },
       { name: "Notes", description: "Note management endpoints" },
     ],
   },
-  apis: ["./src/routes/*.js"],
+  apis: ["./src/app.js", "./src/routes/*.js"],
 };
 
 const swaggerSpec = swaggerJsdoc(options);
