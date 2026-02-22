@@ -217,7 +217,7 @@ app.get("/", (_req, res) => {
 <body>
   <div class="container">
     <h1>Notes API</h1>
-    <p class="version">v\${version}</p>
+    <p class="version">v${version}</p>
 
     <div class="links">
       <a href="/api-docs" class="btn-primary">API Documentation</a>
