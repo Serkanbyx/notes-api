@@ -292,16 +292,12 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 
 **Serkanby**
 
-- 🌐 [serkanbayraktar.com](https://serkanbayraktar.com/)
-- 🐙 [GitHub @Serkanbyx](https://github.com/Serkanbyx)
-- 📧 [serkanbyx1@gmail.com](mailto:serkanbyx1@gmail.com)
+- Website: [serkanbayraktar.com](https://serkanbayraktar.com/)
+- GitHub: [@Serkanbyx](https://github.com/Serkanbyx)
+- Email: [serkanbyx1@gmail.com](mailto:serkanbyx1@gmail.com)
 
 ## Contact
 
-- 📬 [Open an Issue](https://github.com/Serkanbyx/notes-api/issues)
-- 📧 [serkanbyx1@gmail.com](mailto:serkanbyx1@gmail.com)
-- 🌐 [serkanbayraktar.com](https://serkanbayraktar.com/)
-
----
-
-⭐ If you like this project, don't forget to give it a star!
+- [Open an Issue](https://github.com/Serkanbyx/notes-api/issues)
+- Email: [serkanbyx1@gmail.com](mailto:serkanbyx1@gmail.com)
+- Website: [serkanbayraktar.com](https://serkanbayraktar.com/)
