@@ -90,16 +90,19 @@ Make sure you have the following installed:
 
 ```bash
 # Clone your fork
-git clone https://github.com/YOUR_USERNAME/REPOSITORY_NAME.git
+git clone https://github.com/YOUR_USERNAME/notes-api.git
 
 # Navigate to project directory
-cd REPOSITORY_NAME
+cd notes-api
 
-# Install dependencies (if applicable)
-# npm install / pip install -r requirements.txt / etc.
+# Install dependencies
+npm install
 
-# Start development server (if applicable)
-# npm start / python app.py / etc.
+# Create environment file
+cp .env.example .env
+
+# Start development server
+npm run dev
 ```
 
 ## Style Guidelines

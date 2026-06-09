@@ -33,4 +33,8 @@ function initializeDatabase() {
   `);
 }
 
-module.exports = { db, initializeDatabase };
+function closeDatabase() {
+  db.close();
+}
+
+module.exports = { db, initializeDatabase, closeDatabase };

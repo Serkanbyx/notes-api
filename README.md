@@ -14,7 +14,9 @@ A modern, secure RESTful API for managing personal notes. Built with Express.js 
 - **Tag Filtering** — Organize and filter notes by tags using `?tag=`
 - **Pagination** — Efficient paginated responses with `?page=` and `?limit=` parameters
 - **Interactive API Docs** — Auto-generated Swagger/OpenAPI documentation at `/api-docs`
-- **Security Hardened** — Helmet security headers, bcrypt password hashing, input validation
+- **Security Hardened** — Helmet security headers, bcrypt password hashing, input validation, body size limiting
+- **Graceful Shutdown** — Clean server and database shutdown on process signals
+- **Production-Ready Error Handling** — Environment-aware error responses that hide internals in production
 - **Lightweight Database** — SQLite via better-sqlite3 for zero-config, file-based storage
 
 ## Live Demo
@@ -66,9 +68,12 @@ cp .env.example .env
 | Variable | Description | Default |
 |---|---|---|
 | `PORT` | Server port | `3000` |
-| `JWT_SECRET` | Secret key for signing tokens | — |
+| `JWT_SECRET` | Secret key for signing tokens (required) | — |
 | `JWT_EXPIRES_IN` | Token expiration time | `7d` |
 | `DB_PATH` | SQLite database file path | `./notes.db` |
+| `NODE_ENV` | Environment mode | `development` |
+
+> **Important:** The `JWT_SECRET` variable is required. The server will not start without it.
 
 5. Start the server:
 
@@ -246,18 +251,22 @@ Add new fields to the notes table in `src/config/database.js` and update the cor
 
 ### Completed Features
 
-✅ User registration and login with JWT  
-✅ Secure password hashing with bcrypt  
-✅ Full CRUD for notes  
-✅ Ownership-based access control  
-✅ Full-text search across titles and content  
-✅ Tag-based filtering  
-✅ Pagination with configurable limits  
-✅ Interactive Swagger documentation  
-✅ Security headers via Helmet  
-✅ Input validation and sanitization  
-✅ Global error handling  
-✅ Render deployment configuration  
+✅ User registration and login with JWT
+✅ Secure password hashing with bcrypt
+✅ Full CRUD for notes
+✅ Ownership-based access control
+✅ Full-text search across titles and content
+✅ Tag-based filtering
+✅ Pagination with configurable limits
+✅ Interactive Swagger documentation
+✅ Security headers via Helmet
+✅ Input validation and sanitization
+✅ Global error handling
+✅ Graceful shutdown with database cleanup
+✅ Environment-aware error responses
+✅ Request body size limiting
+✅ Startup validation for required config
+✅ Render deployment configuration
 
 ### Future Features
 
@@ -301,3 +310,7 @@ This project is licensed under the MIT License — see the [LICENSE](LICENSE) fi
 - [Open an Issue](https://github.com/Serkanbyx/notes-api/issues)
 - Email: [serkanbyx1@gmail.com](mailto:serkanbyx1@gmail.com)
 - Website: [serkanbayraktar.com](https://serkanbayraktar.com/)
+
+---
+
+⭐ If you like this project, don't forget to give it a star!

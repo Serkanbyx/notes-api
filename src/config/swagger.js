@@ -1,4 +1,7 @@
 const swaggerJsdoc = require("swagger-jsdoc");
+const path = require("path");
+
+const srcDir = path.resolve(__dirname, "..");
 
 const options = {
   definition: {
@@ -30,7 +33,10 @@ const options = {
       { name: "Notes", description: "Note management endpoints" },
     ],
   },
-  apis: ["./src/app.js", "./src/routes/*.js"],
+  apis: [
+    path.join(srcDir, "app.js"),
+    path.join(srcDir, "routes", "*.js"),
+  ],
 };
 
 const swaggerSpec = swaggerJsdoc(options);

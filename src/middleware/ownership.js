@@ -2,6 +2,11 @@ const Note = require("../models/Note");
 
 function checkNoteOwnership(req, res, next) {
   const noteId = parseInt(req.params.id, 10);
+
+  if (Number.isNaN(noteId) || noteId <= 0) {
+    return res.status(400).json({ error: "Invalid note ID" });
+  }
+
   const note = Note.findById(noteId);
 
   if (!note) {
